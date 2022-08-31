@@ -24,6 +24,8 @@ clang++-14  $CLANG_CFL  -shared injectPrintf.so.cc -o printf.so $CLANG_LFL
  ```
  clang++-14 -flegacy-pass-manager -g -Xclang -load -Xclang ./printf.so example.cpp -o ex2
  ```
+Now, run that binary, it will print `test` which is not printed in the c file.
+
  - Build binary for arm32,
 ```
 clang++-14 --target=arm-linux-gnueabihf -flegacy-pass-manager -g -Xclang -load -Xclang ./printf.so example.cpp -o ex2
