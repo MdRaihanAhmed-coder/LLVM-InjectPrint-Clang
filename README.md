@@ -26,7 +26,7 @@ clang++-14  $CLANG_CFL  -shared injectPrintf.so.cc -o printf.so $CLANG_LFL
  ```
 Now, run that binary using `./ex1` or, `ex2`, it will print `test` which is not printed in the C/CPP file.
 
- - Build binary for arm32,
+ - Build binary for arm32, simply add this pass while compiling,
 ```
 clang++-14 --target=arm-linux-gnueabihf -flegacy-pass-manager -g -Xclang -load -Xclang ./printf.so example.cpp -o ex2
 ```
